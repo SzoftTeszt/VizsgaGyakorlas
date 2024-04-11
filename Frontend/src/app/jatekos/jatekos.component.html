@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col display-5">
+        Név
+    </div>
+</div>
+
+<ng-container *ngFor="let jatekos of jatekosok">
+<div  class="row">
+    <div class="col-4 display-5">
+       {{jatekos.name}}
+    </div>
+    <div class="col">
+        <button (click)="jatekos.latszik = !jatekos.latszik" type="button" class="btn btn-primary">Tippek</button>
+    </div>
+</div>
+<div *ngIf="jatekos.latszik" class="row">
+    <app-tippek [jatekosId]="jatekos.id" [tippek]="jatekos.tipp"></app-tippek>
+</div>
+</ng-container>

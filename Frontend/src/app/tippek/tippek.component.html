@@ -1,0 +1,23 @@
+<div  class="row my-3">
+<div *ngFor="let oszlop of oszlopok" class="col">
+    <input [(ngModel)]="newTipp[oszlop]" type="number" class="form-control">
+</div>
+<div class="col">
+    <button (click)="newTippek()" type="button" class="btn btn-primary">Add</button>
+</div>
+<div class="col">
+    
+</div>
+</div>
+
+<div *ngFor="let tipp of tippek" class="row my-1">
+<div *ngFor="let oszlop of oszlopok" class="col">
+    <input [(ngModel)]="tipp[oszlop]" type="number" class="form-control">
+</div>
+<div class="col">
+    <button (click)="updateTipp(tipp)" type="button" class="btn btn-primary">Save</button>
+</div>
+<div class="col">
+    <button (click)="deleteTipp(tipp)" type="button" class="btn btn-primary">Delete</button>
+</div>
+</div>
